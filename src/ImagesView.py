@@ -86,7 +86,7 @@ class ImagesView(QWidget):
    
     def checkSize(self, img):
         """Checks whether an image is too small, if it is then the image is made larger."""
-        if img.height() < 250 or img.width() < 250: #dit gedeelte kan als functie binnen imagesmodel geimplementeerd worden
+        if img.height() < 250 or img.width() < 250:
             print("too small")
             img = img.scaled(QSize(255,255), Qt.KeepAspectRatioByExpanding, Qt.SmoothTransformation)
             print("h: " + str(img.height()) + ", w: " + str(img.width()))
