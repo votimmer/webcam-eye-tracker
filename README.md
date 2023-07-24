@@ -1,6 +1,6 @@
 # webcam-eye-tracker
 
-Documentation can be found at https://votimmer.github.io/webcam-eye-tracker/
+The application can be run by running Main.py. Documentation can be found at https://votimmer.github.io/webcam-eye-tracker/
 
 General instructions:
 You should stay within view of the webcam during all eye tracking tasks, your eyes should remain visible as well. The application will shut down if you fail to do so.
