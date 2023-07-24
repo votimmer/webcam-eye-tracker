@@ -2,6 +2,9 @@
 
 Documentation can be found at https://votimmer.github.io/webcam-eye-tracker/
 
+General instructions:
+You should stay within view of the webcam during all eye tracking tasks, your eyes should remain visible as well. The application will shut down if you fail to do so.
+
 Instructions for calibration:
 1. To start calibration, press the space bar. The first calibration point will appear.
 2. Focus your gaze on the calibration point. It is recommended that you move your head in the direction of the calibration point as well. Keep looking at the point until the color changes.
