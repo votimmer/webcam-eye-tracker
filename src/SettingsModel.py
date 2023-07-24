@@ -39,7 +39,7 @@ class SettingsModel:
             print("Invalid input, input must be a whole number.")
             return -1
         
-    def setCalibrationColumns(self, col): #TODO: set max on col value
+    def setCalibrationColumns(self, col): 
         """Sets the number of columns the calibration grid should contain."""
         try:
             if col.isnumeric():
