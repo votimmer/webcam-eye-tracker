@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>src.CalibrationModel API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>src.CalibrationModel</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from datetime import datetime
+import csv
+import math
+from Webcam import Webcam
+from PyQt5.QtCore import QTimer
+from sklearn.linear_model import Ridge
+import pandas as pd
+
+
+class CalibrationModel:
+
+    &#34;&#34;&#34;
+    The CalibrationModel class is used to calibrate and validate eye-tracking systems. 
+    It estimates where a person is looking on a computer screen by using the positions of their left and right irises detected from a webcam. 
+    The class divides the screen into sections for calibration, records iris positions, and uses them to train a model. 
+    This model can then predict the person&#39;s gaze location.
+    &#34;&#34;&#34;
+    
+    def __init__(self, row, col, interval, window_w, window_h, mode):
+        self.row = row
+        self.col = col 
+        self.interval = interval
+        self.samples = 50 #default value
+        self.window_w = window_w #width of the window in pixels
+        self.window_h = window_h #height of the window in pixels
+        self.visited = [] #contains the cells that have been visited by the calibration point
+        self.unvisited = self.divideScreen()
+        self.output_file = None
+        self.webcam = Webcam()
+        self.mode = mode
+        if self.mode == &#39;c&#39;:
+            self.createFile()
+
+    def setWindowDimensions(self, window_w, window_h):
+        &#34;&#34;&#34;Sets the screen dimensions.&#34;&#34;&#34;
+        self.window_h = window_h
+        self.window_w = window_w
+
+    def setMode(self, mode):
+        &#34;&#34;&#34;Sets the mode of the window.&#34;&#34;&#34;
+        if mode == &#39;c&#39; or mode == &#39;v&#39;: #c = calibration, v = validation
+            self.mode = mode
+        else:
+            print(&#34;Invalid input, mode must be c or v.&#34;)
+
+    def setSamples(self, samples):
+        &#34;&#34;&#34;Sets the number of samples taken at each calibration point.&#34;&#34;&#34;
+        self.samples = samples
+
+    def divideScreen(self):
+        &#34;&#34;&#34;Divides the screen into a row x col grid and saves the center of each cell in a list.&#34;&#34;&#34;
+        try:
+            cell_h = self.window_h / self.row #height of a single grid cell
+            cell_w = self.window_w / self.col #width of a single grid cell
+            list_h = []
+            list_w = []
+            for i in range(self.row):
+                center = (cell_h / 2) + (i*cell_h)
+                list_h.append(center)
+            for j in range(self.col):
+                center = (cell_w / 2) + (j*cell_w)
+                list_w.append(center)
+            list_cells = [(x, y) for x in list_w for y in list_h]
+            return list_cells
+        except ZeroDivisionError:
+            print(&#34;Can&#39;t divide by zero.&#34;)
+    
+    def visitCell(self, cell):
+        &#34;&#34;&#34;Removes a cell from the list of unvisited cells and appends it to the list of visited cells.&#34;&#34;&#34;
+        try:
+            self.visited.append(cell)
+            self.unvisited.remove(cell)
+            
+        except:
+            print(&#34;Cell doesn&#39;t exist&#34;)
+
+    def checkAllVisited(self):
+        &#34;&#34;&#34;Checks if all cells have been visited by the calibration point.&#34;&#34;&#34;
+        try:
+            return len(self.unvisited) == 0 #True if all cells have been visited, False otherwise
+        except TypeError:
+            print(&#34;The list containing unvisited cells does not exist.&#34;)
+    
+    def createFile(self):
+        &#34;&#34;&#34;Creates a new csv file with the current datetime as name.&#34;&#34;&#34;
+        timestamp = datetime.now().strftime(&#34;%Y-%m-%d-%H-%M-%S&#34;)
+        #Create the file name with the timestamp
+        file_name = f&#34;data_{timestamp}.csv&#34;
+        with open(file_name, &#39;w&#39;, newline=&#39;&#39;) as file:
+            writer = csv.writer(file)
+            writer.writerow([&#39;Dot location x&#39;, &#39;Dot location y&#39;, 
+                             &#39;Left eye x-coordinates&#39;, &#39;Left eye y-coordinates&#39;, 
+                             &#39;Right eye x-coordinates&#39;, &#39;Right eye y-coordinates&#39;,
+                             &#39;Iris Distance&#39;])
+            
+        self.output_file = file_name
+
+    def writeToFile(self, dotpos, lefteye, righteye, distance):
+        &#34;&#34;&#34;Writes the coordinates of the calibration point, center of left iris and center of right iris to a text file.&#34;&#34;&#34;
+        #Open the file in append mode
+        with open(self.output_file, mode=&#39;a&#39;, newline=&#39;&#39;) as file:
+            writer = csv.writer(file)
+            writer.writerow([dotpos[0], dotpos[1], lefteye[0], lefteye[1], righteye[0], righteye[1], distance])
+
+    def detectIrises(self):
+        &#34;&#34;&#34;Detects the centers of the left and right irises.&#34;&#34;&#34;
+        return self.webcam.detectIris()
+        
+    def writeIrises(self, dotpos):
+        &#34;&#34;&#34;Writes iris coordinates to a CSV file.&#34;&#34;&#34;
+        left, right = self.detectIrises()
+        distance = self.calculateDistance(left, right) #calculates distance between left and right eye
+        self.writeToFile(dotpos, left, right, distance)
+
+    def calculateDistance(self, actual, predicted):
+        &#34;&#34;&#34;Calculates the euclidean distance between the center of a validation point and predicted gaze location.&#34;&#34;&#34;
+        dist = math.sqrt(((predicted[0] - actual[0])**2) + ((predicted[1] - actual[1])**2))
+        return dist
+    
+    def calculateAverageDistance(self, distances):
+        &#34;&#34;&#34;Calculates the average euclidean distance between the predicted points and actual locations.&#34;&#34;&#34;
+        if len(distances) &gt; 0:
+            average_distance = sum(distances) / len(distances)
+            return round(average_distance, 2) 
+        else:
+            print(&#34;No euclidean distances were saved, the list is empty.&#34;)
+
+
+    def collectSamples(self, samples, dotpos): 
+        &#34;&#34;&#34;Records the positions of the left eye and right eye &#39;samples&#39; number of times for each calibration point and writes them to a CSV file.&#34;&#34;&#34;
+        try:
+            self.remaining_samples = samples  
+            timer = QTimer()
+
+            #Writes iris positions to the CSV file for each calibration point
+            def timerCallback():
+                self.writeIrises(dotpos)
+                self.remaining_samples -= 1
+                if self.remaining_samples &lt;= 0:
+                    timer.stop()
+
+            timer.timeout.connect(timerCallback)
+            timerinterval = self.interval / samples
+            timer.setInterval(timerinterval)
+            timer.start()
+        except ZeroDivisionError:
+            print(&#34;Samples must be larger than 0&#34;)
+
+    def averageIrisPositions(self):
+        &#34;&#34;&#34;Calculates the average iris positions for each calibration marker.&#34;&#34;&#34;
+        dataframe = pd.read_csv(self.output_file)
+        grouped_dots = dataframe.groupby([&#39;Dot location x&#39;, &#39;Dot location y&#39;])[[&#39;Left eye x-coordinates&#39;, &#39;Left eye y-coordinates&#39;, 
+                                                                                &#39;Right eye x-coordinates&#39;, &#39;Right eye y-coordinates&#39;,
+                                                                                &#39;Iris Distance&#39;]].mean()
+        grouped_dots.reset_index(inplace=True)
+        print(grouped_dots)
+        return grouped_dots
+    
+    def train(self, dataframe):
+        &#34;&#34;&#34;Trains a ridge regression model using the average iris positions.&#34;&#34;&#34;
+        X = dataframe[[&#39;Left eye x-coordinates&#39;, &#39;Left eye y-coordinates&#39;, 
+                       &#39;Right eye x-coordinates&#39;, &#39;Right eye y-coordinates&#39;, 
+                       &#39;Iris Distance&#39;]]
+        y = dataframe[[&#39;Dot location x&#39;, &#39;Dot location y&#39;]]
+
+        ridge_model = Ridge(alpha=1.0)
+        ridge_model.fit(X,y)
+        return ridge_model
+
+    def estimate_gaze_location(self, ridge_model):
+        &#34;&#34;&#34;Estimates the gaze location based on the prediction made by the regression model.&#34;&#34;&#34;
+        left_iris, right_iris = self.detectIrises()
+        distance = self.calculateDistance(left_iris, right_iris)
+        input_features = (left_iris[0], left_iris[1], right_iris[0], right_iris[1], distance)
+
+        #Predict gaze location using the trained model
+        gaze_location = ridge_model.predict([input_features])
+        print(&#34;predicted location: {}&#34;.format(gaze_location[0]))
+        return gaze_location</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="src.CalibrationModel.CalibrationModel"><code class="flex name class">
+<span>class <span class="ident">CalibrationModel</span></span>
+<span>(</span><span>row, col, interval, window_w, window_h, mode)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The CalibrationModel class is used to calibrate and validate eye-tracking systems.
+It estimates where a person is looking on a computer screen by using the positions of their left and right irises detected from a webcam.
+The class divides the screen into sections for calibration, records iris positions, and uses them to train a model.
+This model can then predict the person's gaze location.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CalibrationModel:
+
+    &#34;&#34;&#34;
+    The CalibrationModel class is used to calibrate and validate eye-tracking systems. 
+    It estimates where a person is looking on a computer screen by using the positions of their left and right irises detected from a webcam. 
+    The class divides the screen into sections for calibration, records iris positions, and uses them to train a model. 
+    This model can then predict the person&#39;s gaze location.
+    &#34;&#34;&#34;
+    
+    def __init__(self, row, col, interval, window_w, window_h, mode):
+        self.row = row
+        self.col = col 
+        self.interval = interval
+        self.samples = 50 #default value
+        self.window_w = window_w #width of the window in pixels
+        self.window_h = window_h #height of the window in pixels
+        self.visited = [] #contains the cells that have been visited by the calibration point
+        self.unvisited = self.divideScreen()
+        self.output_file = None
+        self.webcam = Webcam()
+        self.mode = mode
+        if self.mode == &#39;c&#39;:
+            self.createFile()
+
+    def setWindowDimensions(self, window_w, window_h):
+        &#34;&#34;&#34;Sets the screen dimensions.&#34;&#34;&#34;
+        self.window_h = window_h
+        self.window_w = window_w
+
+    def setMode(self, mode):
+        &#34;&#34;&#34;Sets the mode of the window.&#34;&#34;&#34;
+        if mode == &#39;c&#39; or mode == &#39;v&#39;: #c = calibration, v = validation
+            self.mode = mode
+        else:
+            print(&#34;Invalid input, mode must be c or v.&#34;)
+
+    def setSamples(self, samples):
+        &#34;&#34;&#34;Sets the number of samples taken at each calibration point.&#34;&#34;&#34;
+        self.samples = samples
+
+    def divideScreen(self):
+        &#34;&#34;&#34;Divides the screen into a row x col grid and saves the center of each cell in a list.&#34;&#34;&#34;
+        try:
+            cell_h = self.window_h / self.row #height of a single grid cell
+            cell_w = self.window_w / self.col #width of a single grid cell
+            list_h = []
+            list_w = []
+            for i in range(self.row):
+                center = (cell_h / 2) + (i*cell_h)
+                list_h.append(center)
+            for j in range(self.col):
+                center = (cell_w / 2) + (j*cell_w)
+                list_w.append(center)
+            list_cells = [(x, y) for x in list_w for y in list_h]
+            return list_cells
+        except ZeroDivisionError:
+            print(&#34;Can&#39;t divide by zero.&#34;)
+    
+    def visitCell(self, cell):
+        &#34;&#34;&#34;Removes a cell from the list of unvisited cells and appends it to the list of visited cells.&#34;&#34;&#34;
+        try:
+            self.visited.append(cell)
+            self.unvisited.remove(cell)
+            
+        except:
+            print(&#34;Cell doesn&#39;t exist&#34;)
+
+    def checkAllVisited(self):
+        &#34;&#34;&#34;Checks if all cells have been visited by the calibration point.&#34;&#34;&#34;
+        try:
+            return len(self.unvisited) == 0 #True if all cells have been visited, False otherwise
+        except TypeError:
+            print(&#34;The list containing unvisited cells does not exist.&#34;)
+    
+    def createFile(self):
+        &#34;&#34;&#34;Creates a new csv file with the current datetime as name.&#34;&#34;&#34;
+        timestamp = datetime.now().strftime(&#34;%Y-%m-%d-%H-%M-%S&#34;)
+        #Create the file name with the timestamp
+        file_name = f&#34;data_{timestamp}.csv&#34;
+        with open(file_name, &#39;w&#39;, newline=&#39;&#39;) as file:
+            writer = csv.writer(file)
+            writer.writerow([&#39;Dot location x&#39;, &#39;Dot location y&#39;, 
+                             &#39;Left eye x-coordinates&#39;, &#39;Left eye y-coordinates&#39;, 
+                             &#39;Right eye x-coordinates&#39;, &#39;Right eye y-coordinates&#39;,
+                             &#39;Iris Distance&#39;])
+            
+        self.output_file = file_name
+
+    def writeToFile(self, dotpos, lefteye, righteye, distance):
+        &#34;&#34;&#34;Writes the coordinates of the calibration point, center of left iris and center of right iris to a text file.&#34;&#34;&#34;
+        #Open the file in append mode
+        with open(self.output_file, mode=&#39;a&#39;, newline=&#39;&#39;) as file:
+            writer = csv.writer(file)
+            writer.writerow([dotpos[0], dotpos[1], lefteye[0], lefteye[1], righteye[0], righteye[1], distance])
+
+    def detectIrises(self):
+        &#34;&#34;&#34;Detects the centers of the left and right irises.&#34;&#34;&#34;
+        return self.webcam.detectIris()
+        
+    def writeIrises(self, dotpos):
+        &#34;&#34;&#34;Writes iris coordinates to a CSV file.&#34;&#34;&#34;
+        left, right = self.detectIrises()
+        distance = self.calculateDistance(left, right) #calculates distance between left and right eye
+        self.writeToFile(dotpos, left, right, distance)
+
+    def calculateDistance(self, actual, predicted):
+        &#34;&#34;&#34;Calculates the euclidean distance between the center of a validation point and predicted gaze location.&#34;&#34;&#34;
+        dist = math.sqrt(((predicted[0] - actual[0])**2) + ((predicted[1] - actual[1])**2))
+        return dist
+    
+    def calculateAverageDistance(self, distances):
+        &#34;&#34;&#34;Calculates the average euclidean distance between the predicted points and actual locations.&#34;&#34;&#34;
+        if len(distances) &gt; 0:
+            average_distance = sum(distances) / len(distances)
+            return round(average_distance, 2) 
+        else:
+            print(&#34;No euclidean distances were saved, the list is empty.&#34;)
+
+
+    def collectSamples(self, samples, dotpos): 
+        &#34;&#34;&#34;Records the positions of the left eye and right eye &#39;samples&#39; number of times for each calibration point and writes them to a CSV file.&#34;&#34;&#34;
+        try:
+            self.remaining_samples = samples  
+            timer = QTimer()
+
+            #Writes iris positions to the CSV file for each calibration point
+            def timerCallback():
+                self.writeIrises(dotpos)
+                self.remaining_samples -= 1
+                if self.remaining_samples &lt;= 0:
+                    timer.stop()
+
+            timer.timeout.connect(timerCallback)
+            timerinterval = self.interval / samples
+            timer.setInterval(timerinterval)
+            timer.start()
+        except ZeroDivisionError:
+            print(&#34;Samples must be larger than 0&#34;)
+
+    def averageIrisPositions(self):
+        &#34;&#34;&#34;Calculates the average iris positions for each calibration marker.&#34;&#34;&#34;
+        dataframe = pd.read_csv(self.output_file)
+        grouped_dots = dataframe.groupby([&#39;Dot location x&#39;, &#39;Dot location y&#39;])[[&#39;Left eye x-coordinates&#39;, &#39;Left eye y-coordinates&#39;, 
+                                                                                &#39;Right eye x-coordinates&#39;, &#39;Right eye y-coordinates&#39;,
+                                                                                &#39;Iris Distance&#39;]].mean()
+        grouped_dots.reset_index(inplace=True)
+        print(grouped_dots)
+        return grouped_dots
+    
+    def train(self, dataframe):
+        &#34;&#34;&#34;Trains a ridge regression model using the average iris positions.&#34;&#34;&#34;
+        X = dataframe[[&#39;Left eye x-coordinates&#39;, &#39;Left eye y-coordinates&#39;, 
+                       &#39;Right eye x-coordinates&#39;, &#39;Right eye y-coordinates&#39;, 
+                       &#39;Iris Distance&#39;]]
+        y = dataframe[[&#39;Dot location x&#39;, &#39;Dot location y&#39;]]
+
+        ridge_model = Ridge(alpha=1.0)
+        ridge_model.fit(X,y)
+        return ridge_model
+
+    def estimate_gaze_location(self, ridge_model):
+        &#34;&#34;&#34;Estimates the gaze location based on the prediction made by the regression model.&#34;&#34;&#34;
+        left_iris, right_iris = self.detectIrises()
+        distance = self.calculateDistance(left_iris, right_iris)
+        input_features = (left_iris[0], left_iris[1], right_iris[0], right_iris[1], distance)
+
+        #Predict gaze location using the trained model
+        gaze_location = ridge_model.predict([input_features])
+        print(&#34;predicted location: {}&#34;.format(gaze_location[0]))
+        return gaze_location</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="src.CalibrationModel.CalibrationModel.averageIrisPositions"><code class="name flex">
+<span>def <span class="ident">averageIrisPositions</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the average iris positions for each calibration marker.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def averageIrisPositions(self):
+    &#34;&#34;&#34;Calculates the average iris positions for each calibration marker.&#34;&#34;&#34;
+    dataframe = pd.read_csv(self.output_file)
+    grouped_dots = dataframe.groupby([&#39;Dot location x&#39;, &#39;Dot location y&#39;])[[&#39;Left eye x-coordinates&#39;, &#39;Left eye y-coordinates&#39;, 
+                                                                            &#39;Right eye x-coordinates&#39;, &#39;Right eye y-coordinates&#39;,
+                                                                            &#39;Iris Distance&#39;]].mean()
+    grouped_dots.reset_index(inplace=True)
+    print(grouped_dots)
+    return grouped_dots</code></pre>
+</details>
+</dd>
+<dt id="src.CalibrationModel.CalibrationModel.calculateAverageDistance"><code class="name flex">
+<span>def <span class="ident">calculateAverageDistance</span></span>(<span>self, distances)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the average euclidean distance between the predicted points and actual locations.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calculateAverageDistance(self, distances):
+    &#34;&#34;&#34;Calculates the average euclidean distance between the predicted points and actual locations.&#34;&#34;&#34;
+    if len(distances) &gt; 0:
+        average_distance = sum(distances) / len(distances)
+        return round(average_distance, 2) 
+    else:
+        print(&#34;No euclidean distances were saved, the list is empty.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="src.CalibrationModel.CalibrationModel.calculateDistance"><code class="name flex">
+<span>def <span class="ident">calculateDistance</span></span>(<span>self, actual, predicted)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the euclidean distance between the center of a validation point and predicted gaze location.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calculateDistance(self, actual, predicted):
+    &#34;&#34;&#34;Calculates the euclidean distance between the center of a validation point and predicted gaze location.&#34;&#34;&#34;
+    dist = math.sqrt(((predicted[0] - actual[0])**2) + ((predicted[1] - actual[1])**2))
+    return dist</code></pre>
+</details>
+</dd>
+<dt id="src.CalibrationModel.CalibrationModel.checkAllVisited"><code class="name flex">
+<span>def <span class="ident">checkAllVisited</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if all cells have been visited by the calibration point.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def checkAllVisited(self):
+    &#34;&#34;&#34;Checks if all cells have been visited by the calibration point.&#34;&#34;&#34;
+    try:
+        return len(self.unvisited) == 0 #True if all cells have been visited, False otherwise
+    except TypeError:
+        print(&#34;The list containing unvisited cells does not exist.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="src.CalibrationModel.CalibrationModel.collectSamples"><code class="name flex">
+<span>def <span class="ident">collectSamples</span></span>(<span>self, samples, dotpos)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Records the positions of the left eye and right eye 'samples' number of times for each calibration point and writes them to a CSV file.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def collectSamples(self, samples, dotpos): 
+    &#34;&#34;&#34;Records the positions of the left eye and right eye &#39;samples&#39; number of times for each calibration point and writes them to a CSV file.&#34;&#34;&#34;
+    try:
+        self.remaining_samples = samples  
+        timer = QTimer()
+
+        #Writes iris positions to the CSV file for each calibration point
+        def timerCallback():
+            self.writeIrises(dotpos)
+            self.remaining_samples -= 1
+            if self.remaining_samples &lt;= 0:
+                timer.stop()
+
+        timer.timeout.connect(timerCallback)
+        timerinterval = self.interval / samples
+        timer.setInterval(timerinterval)
+        timer.start()
+    except ZeroDivisionError:
+        print(&#34;Samples must be larger than 0&#34;)</code></pre>
+</details>
+</dd>
+<dt id="src.CalibrationModel.CalibrationModel.createFile"><code class="name flex">
+<span>def <span class="ident">createFile</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a new csv file with the current datetime as name.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def createFile(self):
+    &#34;&#34;&#34;Creates a new csv file with the current datetime as name.&#34;&#34;&#34;
+    timestamp = datetime.now().strftime(&#34;%Y-%m-%d-%H-%M-%S&#34;)
+    #Create the file name with the timestamp
+    file_name = f&#34;data_{timestamp}.csv&#34;
+    with open(file_name, &#39;w&#39;, newline=&#39;&#39;) as file:
+        writer = csv.writer(file)
+        writer.writerow([&#39;Dot location x&#39;, &#39;Dot location y&#39;, 
+                         &#39;Left eye x-coordinates&#39;, &#39;Left eye y-coordinates&#39;, 
+                         &#39;Right eye x-coordinates&#39;, &#39;Right eye y-coordinates&#39;,
+                         &#39;Iris Distance&#39;])
+        
+    self.output_file = file_name</code></pre>
+</details>
+</dd>
+<dt id="src.CalibrationModel.CalibrationModel.detectIrises"><code class="name flex">
+<span>def <span class="ident">detectIrises</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Detects the centers of the left and right irises.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def detectIrises(self):
+    &#34;&#34;&#34;Detects the centers of the left and right irises.&#34;&#34;&#34;
+    return self.webcam.detectIris()</code></pre>
+</details>
+</dd>
+<dt id="src.CalibrationModel.CalibrationModel.divideScreen"><code class="name flex">
+<span>def <span class="ident">divideScreen</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Divides the screen into a row x col grid and saves the center of each cell in a list.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def divideScreen(self):
+    &#34;&#34;&#34;Divides the screen into a row x col grid and saves the center of each cell in a list.&#34;&#34;&#34;
+    try:
+        cell_h = self.window_h / self.row #height of a single grid cell
+        cell_w = self.window_w / self.col #width of a single grid cell
+        list_h = []
+        list_w = []
+        for i in range(self.row):
+            center = (cell_h / 2) + (i*cell_h)
+            list_h.append(center)
+        for j in range(self.col):
+            center = (cell_w / 2) + (j*cell_w)
+            list_w.append(center)
+        list_cells = [(x, y) for x in list_w for y in list_h]
+        return list_cells
+    except ZeroDivisionError:
+        print(&#34;Can&#39;t divide by zero.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="src.CalibrationModel.CalibrationModel.estimate_gaze_location"><code class="name flex">
+<span>def <span class="ident">estimate_gaze_location</span></span>(<span>self, ridge_model)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Estimates the gaze location based on the prediction made by the regression model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def estimate_gaze_location(self, ridge_model):
+    &#34;&#34;&#34;Estimates the gaze location based on the prediction made by the regression model.&#34;&#34;&#34;
+    left_iris, right_iris = self.detectIrises()
+    distance = self.calculateDistance(left_iris, right_iris)
+    input_features = (left_iris[0], left_iris[1], right_iris[0], right_iris[1], distance)
+
+    #Predict gaze location using the trained model
+    gaze_location = ridge_model.predict([input_features])
+    print(&#34;predicted location: {}&#34;.format(gaze_location[0]))
+    return gaze_location</code></pre>
+</details>
+</dd>
+<dt id="src.CalibrationModel.CalibrationModel.setMode"><code class="name flex">
+<span>def <span class="ident">setMode</span></span>(<span>self, mode)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the mode of the window.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setMode(self, mode):
+    &#34;&#34;&#34;Sets the mode of the window.&#34;&#34;&#34;
+    if mode == &#39;c&#39; or mode == &#39;v&#39;: #c = calibration, v = validation
+        self.mode = mode
+    else:
+        print(&#34;Invalid input, mode must be c or v.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="src.CalibrationModel.CalibrationModel.setSamples"><code class="name flex">
+<span>def <span class="ident">setSamples</span></span>(<span>self, samples)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the number of samples taken at each calibration point.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setSamples(self, samples):
+    &#34;&#34;&#34;Sets the number of samples taken at each calibration point.&#34;&#34;&#34;
+    self.samples = samples</code></pre>
+</details>
+</dd>
+<dt id="src.CalibrationModel.CalibrationModel.setWindowDimensions"><code class="name flex">
+<span>def <span class="ident">setWindowDimensions</span></span>(<span>self, window_w, window_h)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the screen dimensions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setWindowDimensions(self, window_w, window_h):
+    &#34;&#34;&#34;Sets the screen dimensions.&#34;&#34;&#34;
+    self.window_h = window_h
+    self.window_w = window_w</code></pre>
+</details>
+</dd>
+<dt id="src.CalibrationModel.CalibrationModel.train"><code class="name flex">
+<span>def <span class="ident">train</span></span>(<span>self, dataframe)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Trains a ridge regression model using the average iris positions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def train(self, dataframe):
+    &#34;&#34;&#34;Trains a ridge regression model using the average iris positions.&#34;&#34;&#34;
+    X = dataframe[[&#39;Left eye x-coordinates&#39;, &#39;Left eye y-coordinates&#39;, 
+                   &#39;Right eye x-coordinates&#39;, &#39;Right eye y-coordinates&#39;, 
+                   &#39;Iris Distance&#39;]]
+    y = dataframe[[&#39;Dot location x&#39;, &#39;Dot location y&#39;]]
+
+    ridge_model = Ridge(alpha=1.0)
+    ridge_model.fit(X,y)
+    return ridge_model</code></pre>
+</details>
+</dd>
+<dt id="src.CalibrationModel.CalibrationModel.visitCell"><code class="name flex">
+<span>def <span class="ident">visitCell</span></span>(<span>self, cell)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Removes a cell from the list of unvisited cells and appends it to the list of visited cells.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def visitCell(self, cell):
+    &#34;&#34;&#34;Removes a cell from the list of unvisited cells and appends it to the list of visited cells.&#34;&#34;&#34;
+    try:
+        self.visited.append(cell)
+        self.unvisited.remove(cell)
+        
+    except:
+        print(&#34;Cell doesn&#39;t exist&#34;)</code></pre>
+</details>
+</dd>
+<dt id="src.CalibrationModel.CalibrationModel.writeIrises"><code class="name flex">
+<span>def <span class="ident">writeIrises</span></span>(<span>self, dotpos)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Writes iris coordinates to a CSV file.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def writeIrises(self, dotpos):
+    &#34;&#34;&#34;Writes iris coordinates to a CSV file.&#34;&#34;&#34;
+    left, right = self.detectIrises()
+    distance = self.calculateDistance(left, right) #calculates distance between left and right eye
+    self.writeToFile(dotpos, left, right, distance)</code></pre>
+</details>
+</dd>
+<dt id="src.CalibrationModel.CalibrationModel.writeToFile"><code class="name flex">
+<span>def <span class="ident">writeToFile</span></span>(<span>self, dotpos, lefteye, righteye, distance)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Writes the coordinates of the calibration point, center of left iris and center of right iris to a text file.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def writeToFile(self, dotpos, lefteye, righteye, distance):
+    &#34;&#34;&#34;Writes the coordinates of the calibration point, center of left iris and center of right iris to a text file.&#34;&#34;&#34;
+    #Open the file in append mode
+    with open(self.output_file, mode=&#39;a&#39;, newline=&#39;&#39;) as file:
+        writer = csv.writer(file)
+        writer.writerow([dotpos[0], dotpos[1], lefteye[0], lefteye[1], righteye[0], righteye[1], distance])</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="src" href="index.html">src</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="src.CalibrationModel.CalibrationModel" href="#src.CalibrationModel.CalibrationModel">CalibrationModel</a></code></h4>
+<ul class="">
+<li><code><a title="src.CalibrationModel.CalibrationModel.averageIrisPositions" href="#src.CalibrationModel.CalibrationModel.averageIrisPositions">averageIrisPositions</a></code></li>
+<li><code><a title="src.CalibrationModel.CalibrationModel.calculateAverageDistance" href="#src.CalibrationModel.CalibrationModel.calculateAverageDistance">calculateAverageDistance</a></code></li>
+<li><code><a title="src.CalibrationModel.CalibrationModel.calculateDistance" href="#src.CalibrationModel.CalibrationModel.calculateDistance">calculateDistance</a></code></li>
+<li><code><a title="src.CalibrationModel.CalibrationModel.checkAllVisited" href="#src.CalibrationModel.CalibrationModel.checkAllVisited">checkAllVisited</a></code></li>
+<li><code><a title="src.CalibrationModel.CalibrationModel.collectSamples" href="#src.CalibrationModel.CalibrationModel.collectSamples">collectSamples</a></code></li>
+<li><code><a title="src.CalibrationModel.CalibrationModel.createFile" href="#src.CalibrationModel.CalibrationModel.createFile">createFile</a></code></li>
+<li><code><a title="src.CalibrationModel.CalibrationModel.detectIrises" href="#src.CalibrationModel.CalibrationModel.detectIrises">detectIrises</a></code></li>
+<li><code><a title="src.CalibrationModel.CalibrationModel.divideScreen" href="#src.CalibrationModel.CalibrationModel.divideScreen">divideScreen</a></code></li>
+<li><code><a title="src.CalibrationModel.CalibrationModel.estimate_gaze_location" href="#src.CalibrationModel.CalibrationModel.estimate_gaze_location">estimate_gaze_location</a></code></li>
+<li><code><a title="src.CalibrationModel.CalibrationModel.setMode" href="#src.CalibrationModel.CalibrationModel.setMode">setMode</a></code></li>
+<li><code><a title="src.CalibrationModel.CalibrationModel.setSamples" href="#src.CalibrationModel.CalibrationModel.setSamples">setSamples</a></code></li>
+<li><code><a title="src.CalibrationModel.CalibrationModel.setWindowDimensions" href="#src.CalibrationModel.CalibrationModel.setWindowDimensions">setWindowDimensions</a></code></li>
+<li><code><a title="src.CalibrationModel.CalibrationModel.train" href="#src.CalibrationModel.CalibrationModel.train">train</a></code></li>
+<li><code><a title="src.CalibrationModel.CalibrationModel.visitCell" href="#src.CalibrationModel.CalibrationModel.visitCell">visitCell</a></code></li>
+<li><code><a title="src.CalibrationModel.CalibrationModel.writeIrises" href="#src.CalibrationModel.CalibrationModel.writeIrises">writeIrises</a></code></li>
+<li><code><a title="src.CalibrationModel.CalibrationModel.writeToFile" href="#src.CalibrationModel.CalibrationModel.writeToFile">writeToFile</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
